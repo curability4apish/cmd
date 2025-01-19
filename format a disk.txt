@@ -1,0 +1,41 @@
+Microsoft Windows [Version 10.0.19045.5247]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\WINDOWS\system32>diskpart
+
+DISKPART> list disk
+
+  Disk ###  Status         Size     Free     Dyn  Gpt
+  --------  -------------  -------  -------  ---  ---
+  Disk 0    Online          476 GB  2048 KB        *
+* Disk 1    Online         7680 MB  7679 MB
+
+DISKPART> select disk 1
+
+Disk 1 is now the selected disk.
+
+DISKPART> clean
+
+DiskPart succeeded in cleaning the disk.
+
+DISKPART> create partition primary
+
+DiskPart succeeded in creating the specified partition.
+
+DISKPART> list partition
+
+  Partition ###  Type              Size     Offset
+  -------------  ----------------  -------  -------
+* Partition 1    Primary           7679 MB  1024 KB
+
+DISKPART> select partition 1
+
+Partition 1 is now the selected partition.
+
+DISKPART> format fs=fat32 quick
+
+  100 percent completed
+
+DiskPart successfully formatted the volume.
+
+DISKPART>
